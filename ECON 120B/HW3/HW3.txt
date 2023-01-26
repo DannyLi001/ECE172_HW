@@ -1,0 +1,83 @@
+---------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\Danny\Desktop\ECON 120B\HW3\HW3.txt
+  log type:  text
+ opened on:  25 Jan 2023, 17:15:08
+
+. 
+. use CPS96_15.dta, clear
+
+. ****Q a.i&ii
+. sum ahe if year == 1996
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+         ahe |      6,103    12.69326    6.359035       1.36       62.5
+
+. display "Average hourly earnings in 1996 = " `r(mean)'
+Average hourly earnings in 1996 = 12.693261
+
+. display "Sample standard deviation for AHE in 1996 = " `r(sd)'
+Sample standard deviation for AHE in 1996 = 6.3590345
+
+. sum ahe if year == 2015
+
+    Variable |        Obs        Mean    Std. dev.       Min        Max
+-------------+---------------------------------------------------------
+         ahe |      7,098    21.23744     12.1245   2.040816   105.7692
+
+. display "Average hourly earnings in 2015 = " `r(mean)'
+Average hourly earnings in 2015 = 21.237438
+
+. display "Sample standard deviation for AHE in 2015 = " `r(sd)'
+Sample standard deviation for AHE in 2015 = 12.124505
+
+. 
+. ttest ahe, by(year)
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. err.   Std. dev.   [95% conf. interval]
+---------+--------------------------------------------------------------------
+    1996 |   6,103    12.69326    .0813991    6.359035    12.53369    12.85283
+    2015 |   7,098    21.23744    .1439117     12.1245    20.95533    21.51955
+---------+--------------------------------------------------------------------
+Combined |  13,201    17.28735    .0936909    10.76467     17.1037      17.471
+---------+--------------------------------------------------------------------
+    diff |           -8.544178    .1725813               -8.882462   -8.205894
+------------------------------------------------------------------------------
+    diff = mean(1996) - mean(2015)                                t = -49.5081
+H0: diff = 0                                     Degrees of freedom =    13199
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 0.0000         Pr(|T| > |t|) = 0.0000          Pr(T > t) = 1.0000
+
+. 
+. generate adjusted_ahe = ahe if year == 2015
+(6,103 missing values generated)
+
+. replace adjusted_ahe = ahe*(237/156.9) if year == 1996
+(6,103 real changes made)
+
+. 
+. ttest adjusted_ahe, by(year) unequal
+
+Two-sample t test with unequal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. err.   Std. dev.   [95% conf. interval]
+---------+--------------------------------------------------------------------
+    1996 |   6,103    19.17338    .1229546    9.605425    18.93234    19.41441
+    2015 |   7,098    21.23744    .1439117     12.1245    20.95533    21.51955
+---------+--------------------------------------------------------------------
+Combined |  13,201    20.28319    .0964278    11.07913    20.09418    20.47221
+---------+--------------------------------------------------------------------
+    diff |           -2.064062    .1892839               -2.435086   -1.693038
+------------------------------------------------------------------------------
+    diff = mean(1996) - mean(2015)                                t = -10.9046
+H0: diff = 0                     Satterthwaite's degrees of freedom =  13113.1
+
+    Ha: diff < 0                 Ha: diff != 0                 Ha: diff > 0
+ Pr(T < t) = 0.0000         Pr(|T| > |t|) = 0.0000          Pr(T > t) = 1.0000
+
+. 
+. cap log close

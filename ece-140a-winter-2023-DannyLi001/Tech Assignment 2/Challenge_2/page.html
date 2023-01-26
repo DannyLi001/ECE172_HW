@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Challenge 2 - Redirect Page </title>
+  </head>
+   
+  <body>
+    <h1> Checking your length </h1>
+    <p>This website is used to check the length of your last name, first name, and student ID.</p>
+   
+    <form action="https://slidespace.icu/student" method="POST">
+      <label for="first_name">First name:</label>
+      <input type="text" name="first_name" required><br>
+      <label for="last_name">Last name:</label>
+      <input type="text" name="last_name" required><br>
+      <label for="student_id">Student ID:</label>
+      <input type="text" name="student_id" required><br>
+      <input type="submit" value="Submit">
+    </form>
+    <br>
+    <form action="https://slidespace.icu/api/studentfetch" method="PUT">
+      <label for="first_name">First name:</label>
+      <input type="text" name="first_name" required><br>
+      <label for="last_name">Last name:</label>
+      <input type="text" name="last_name" required><br>
+      <label for="student_id">Student ID:</label>
+      <input type="text" name="student_id" required><br>
+      <input class='btn' type="submit" value="Submit">
+    </form>
+    <h2>
+            Results: <span class='results'></span>
+        </h2>
+        <script src='public/js/slidespace.js'></script>
+   
+  </body>
+</html>

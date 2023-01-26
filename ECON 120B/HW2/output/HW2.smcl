@@ -1,0 +1,31 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\Danny\Desktop\ECON 120B\HW1\output/HW2.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}18 Jan 2023, 10:34:01
+{txt}
+{com}. 
+. use data/baseballsalaries.dta
+{err}{p 0 4 2}
+file {bf:{err}data/baseballsalaries.dta}
+not found
+{p_end}
+{txt}{search r(601), local:r(601);}
+
+end of do-file
+
+{search r(601), local:r(601);}
+
+{com}. do "C:\Users\Danny\AppData\Local\Temp\STD390_000000.tmp"
+{txt}
+{com}. clear all 
+{res}{txt}
+{com}. 
+. cd "C:\Users\Danny\Desktop\ECON 120B\HW1"
+{res}C:\Users\Danny\Desktop\ECON 120B\HW1
+{txt}
+{com}. 
+. cap log close
+{smcl}
+{com}{sf}{ul off}
