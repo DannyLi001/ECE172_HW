@@ -8,11 +8,13 @@ students, this means that all academic work will be done by the individual to
 whom it is assigned, without unauthorized aid of any kind. By including this in
 my report, I agree to abide by the Academic Integrity Policy.
 '''
-
-
+```
+```python
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
 import numpy as np
+```
+```python
 #Programming with Matrices
 # i
 # Create a matrix
@@ -35,7 +37,7 @@ for row in range(len(A)):
     for col in range(len(A[row])):
         if A[row][col] < -70:
             print("val",A[row][col],"in row",row+1,"and col",col+1)
-```
+
 
     val -97 in row 2 and col 1
     val -91 in row 3 and col 3
@@ -43,15 +45,11 @@ for row in range(len(A)):
     val -92 in row 4 and col 2
     
 
-
+```
 ```python
 # iii
 C = np.multiply(A,B)
 C
-```
-
-
-
 
     array([[ 60, -15,   0,  22,  68],
            [-97,   0,  91, -49,   0],
@@ -60,48 +58,31 @@ C
            [  0,   0,  90,   0,   0]])
 
 
-
+```
 
 ```python
 # iv
 np.inner(C[:,2],C[4,:])
-```
-
-
-
 
     0
-
-
-
-
+```
 ```python
 # v
 C[:,3].max()
 arr = C[:,3]
 row_pos = np.where(arr == 91)[0][0]
 print("val", C[:,3].max(), "in row", row_pos+1, "and col", 4)
-```
-
-
-
 
     91
-
-
 
     val 91 in row 3 and col 4
     
 
-
+```
 ```python
 # vi
 D = np.multiply(C[0,:],C)
 D
-```
-
-
-
 
     array([[ 3600,   225,     0,   484,  4624],
            [-5820,     0,     0, -1078,     0],
@@ -110,24 +91,18 @@ D
            [    0,     0,     0,     0,     0]])
 
 
-
+```
 
 ```python
 # vii
 np.inner(D[:,2],D[4,:])
-```
-
-
-
 
     0
 
-
-
-
+```
 ```python
 # Robot Traversal
-# i
+# i)
 # - The loc keeps track of the position of the robot.
 # - The robot should moves one step to south.
 # - If a object is placed at [3,6], the path is blocked and 
@@ -135,32 +110,32 @@ np.inner(D[:,2],D[4,:])
 # - The robot would not be considered an intelligent system 
 #   because it cannot acquire and apply knowledge. 
 
-# ii
+# ii)
 # The robot is now more intelligent than part i because this time
 # it can acquire information and take reactions to it.
 
-# iii
+# iii)
 # 
 
-# iv
+# iv)
 # 
 ```
 
 
 ```python
-# 3.1 i
+# 3.1 i)
 # Bug 1:
 #       Upper bound = 150 + 1.5*(400+8*5) = 810
 #       Lower bound = 150
-# ii
+# ii)
 # Bug 2:
 #       Upper bound = 150 + 0.5*(2*(400+8*5)) = 590
 #       Lower bound = 150
 
 
-# 3.2 i
+# 3.2 i)
 # All three can reach the end point
-# ii
+# ii)
     # Bug 2 would result in the least distance traveled 
     # because if you connect the end and start point with 
     # a straight line, the only obstacle is Geisel library
@@ -170,20 +145,21 @@ np.inner(D[:,2],D[4,:])
     # since Bug 0 wont follow the straight line that connect from 
     # start to end but walking in the direction which head toward 
     # the end while walking.
-# 3.3 i
+# 3.3 i)
 # All three can reach the end point
-# ii
+# ii)
 # Bug 2 would result in least distance traveled because it will ahve
 # lower upper bound than Bug 1 and following more straight line from 
 # start to end than Bug 0.
-# 3.4 i
+# 3.4 i)
 # All three will reach the end point
-# ii 
+# ii )
 # Bug 2 would result in least distance traveled because it will ahve
 # lower upper bound than Bug 1 and following more straight line from 
 # start to end than Bug 0.
-# iii 
-
+# iii )
+```
+```python
 # 4 
 # 1) The expected value for number of correct predictions out of 100 is 1/2 ^ 100
 # 2) - The first puzzle is showing one block with graphics on it but the other does not.
@@ -211,7 +187,8 @@ np.inner(D[:,2],D[4,:])
 #    figuring out the pattern of option and test image, it can now figure out which shape
 #    the testing image is.
 
-
+```
+```python
 # 5 
 # see attached file
 ```
