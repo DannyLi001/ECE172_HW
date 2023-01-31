@@ -178,7 +178,7 @@ np.inner(D[:,2],D[4,:])
 ![alt text](/3.2.3.png)
 ```python
 # 4 
-# 1) The expected value for number of correct predictions out of 100 is 1/2 ^ 100
+# 1) The expected value for number of correct predictions out of 100 is 50
 # 2) - The first puzzle is showing one block with graphics on it but the other does not.
 #    Also, the test image has different size and rotation angle.
 #    - The second puzzle is showing square and triangle, and the test image is the same as
