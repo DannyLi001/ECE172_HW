@@ -136,8 +136,8 @@ np.inner(D[:,2],D[4,:])
 # Bug 2:
 #       Upper bound = 150 + 0.5*(2*(400+8*5)) = 590
 #       Lower bound = 150
-
-
+```
+```python
 # 3.2 i)
 # All three can reach the end point
 # ii)
@@ -150,19 +150,32 @@ np.inner(D[:,2],D[4,:])
     # since Bug 0 wont follow the straight line that connect from 
     # start to end but walking in the direction which head toward 
     # the end while walking.
+```
+
+```python
 # 3.3 i)
 # All three can reach the end point
 # ii)
 # Bug 2 would result in least distance traveled because it will ahve
 # lower upper bound than Bug 1 and following more straight line from 
 # start to end than Bug 0.
+# iii)
+```
+
+```python
 # 3.4 i)
 # Bug 0 cannot reach the end point
 # ii )
 # Bug 2 would result in least distance traveled because it will ahve
 # lower upper bound than Bug 1.
+```
+
+```python
 # iii )
 ```
+![alt text](/3.2.1.png)
+![alt text](/3.2.2.png)
+![alt text](/3.2.3.png)
 ```python
 # 4 
 # 1) The expected value for number of correct predictions out of 100 is 1/2 ^ 100
@@ -190,7 +203,6 @@ np.inner(D[:,2],D[4,:])
 #    because it can take in different kinds of shapes and tell which one is it. Besides
 #    figuring out the pattern of option and test image, it can now figure out which shape
 #    the testing image is.
-
 ```
 ```python
 # 5 
