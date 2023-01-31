@@ -110,17 +110,22 @@ np.inner(D[:,2],D[4,:])
 # - The robot would not be considered an intelligent system 
 #   because it cannot acquire and apply knowledge. 
 
+
 # ii)
 # The robot is now more intelligent than part i because this time
 # it can acquire information and take reactions to it.
-
+```
+![alt text](/2.2.png)
+```python
 # iii)
 # 
-
+```
+![alt text](/2.3.png)
+```python
 # iv)
 # 
 ```
-
+![alt text](/2.4.png)
 
 ```python
 # 3.1 i)
@@ -152,11 +157,10 @@ np.inner(D[:,2],D[4,:])
 # lower upper bound than Bug 1 and following more straight line from 
 # start to end than Bug 0.
 # 3.4 i)
-# All three will reach the end point
+# Bug 0 cannot reach the end point
 # ii )
 # Bug 2 would result in least distance traveled because it will ahve
-# lower upper bound than Bug 1 and following more straight line from 
-# start to end than Bug 0.
+# lower upper bound than Bug 1.
 # iii )
 ```
 ```python
